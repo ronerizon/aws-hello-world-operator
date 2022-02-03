@@ -1,0 +1,24 @@
+# permissions for end users to edit ec2s.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: ec2-editor-role
+rules:
+- apiGroups:
+  - aws.platform.operatorhello.com
+  resources:
+  - ec2s
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - aws.platform.operatorhello.com
+  resources:
+  - ec2s/status
+  verbs:
+  - get

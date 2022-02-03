@@ -1,0 +1,10 @@
+apiVersion: aws.platform.operatorhello.com/v1alpha1
+kind: S3
+metadata:
+  name: s3-sample
+spec:
+  bucket: operator-hello-test-bucket2
+  access_list: private
+  bucket_configuration:
+    location_constraint: eu-west-1
+  lock_enabled: true
